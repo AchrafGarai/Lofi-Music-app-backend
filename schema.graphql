@@ -6,18 +6,18 @@ type Artist {
   id: String
   imageUrl: String
   name: String
-  tracks: [Track]
+  track: [Track]
 }
 
 type Playlist {
   id: String
   imageUrl: String
   title: String
-  tracks: [Track]
+  track: [Track]
 }
 
 type Query {
-  Artists: [Artist]
+  Artist: [Artist]
   getAllSongs: [Track]
   playlist(id: String!): Playlist
   playlists: [Playlist]
