@@ -9,7 +9,7 @@ export const Playlist = objectType({
 
     t.string('imageUrl')
 
-    t.list.field('track', {
+    t.list.field('tracks', {
       type: 'Track',
       resolve(parent, _args, ctx) {
         return ctx.prisma.track.findMany({

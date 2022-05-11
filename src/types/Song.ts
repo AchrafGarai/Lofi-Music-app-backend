@@ -27,7 +27,7 @@ export const Song = objectType({
 export const getAllSongs = extendType({
   type: 'Query',
   definition(t) {
-    t.list.field('getAllSongs', {
+    t.list.field('Tracks', {
       type: 'Track',
       resolve(_parent, _args, ctx) {
         return ctx.prisma.track.findMany()

@@ -9,7 +9,7 @@ export const Artist = objectType({
 
     t.string('imageUrl')
 
-    t.list.field('track', {
+    t.list.field('tracks', {
       type: 'Track',
       resolve(parent, _args, ctx) {
         return ctx.prisma.track.findMany({
@@ -25,7 +25,7 @@ export const Artist = objectType({
 export const getAllArtists = extendType({
   type: 'Query',
   definition(t) {
-    t.list.field('Artist', {
+    t.list.field('Artists', {
       type: 'Artist',
       resolve(_parent, _args, ctx) {
         return ctx.prisma.artist.findMany()
